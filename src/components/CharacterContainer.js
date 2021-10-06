@@ -23,7 +23,7 @@ const modalStyle = {
 const characterInfoContainerStyle = {
   textAlign: "left",
   border: "1px solid gray",
-  borderRadius: "12px",
+  borderRadius: "8px",
   padding: "2%",
   width: "auto",
 };
@@ -89,11 +89,10 @@ const CharacterContainer = () => {
   };
 
   return (
-    <Box>
+    <Box id="containerLayout">
       <div style={favoriteStyle}>
         <h3 style={{ margin: "2% 0", textDecoration: "underline" }}>
-          {" "}
-          My Favorites{" "}
+          Favorite Characters
         </h3>
 
         <div>
@@ -138,7 +137,7 @@ const CharacterContainer = () => {
             {modalInfo.map((character) => {
               return (
                 <div style={characterInfoContainerStyle} key={character.char_id}>
-              <Typography variant="h6" style={{textAlign: 'center', fontWeight: 'normal', borderBottom: "1px solid gray"}}>More About: <b>{character.name}</b> </Typography>
+              <Typography variant="h6" style={{textAlign: 'center', fontWeight: 'bold', borderBottom: "1px solid gray"}}>{character.name} </Typography>
 
                   <div style={{textAlign: 'left'}}>
                     <p style={characterInfoStyle}>{bull} <b>Born:</b> {character.birthday}</p>

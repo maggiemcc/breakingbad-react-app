@@ -11,8 +11,9 @@ import InfoIcon from "@mui/icons-material/Info";
 const CharacterCard = (props) => {
   let imageStyle = {
     height: "auto",
-    width: "auto",
-    maxHeight: "190px",
+    // width: "auto",
+    maxWidth: "190px",
+    // maxHeight: "190px",
     // minWidth: "90px",
     overflow: "hidden",
     borderWidth: 5,

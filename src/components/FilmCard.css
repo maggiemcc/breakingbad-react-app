@@ -55,3 +55,25 @@ body {
 .info span {
     font-weight: lighter;
 }
+
+
+
+
+/* @media screen and (min-width: 700px) and (max-width: 1023px) { */
+  #containerLayout {
+    display: block;
+    /* grid-template-columns: 25% 75%; */
+  }
+/* } */
+
+/* @media screen and (min-width: 1024px){
+  #containerLayout {
+    display: grid;
+    grid-template-columns: 35% 65%;
+  }
+} */
+
+/* #containerLayout {
+  display: grid;
+  grid-template-columns: 25% 75%;
+} */
