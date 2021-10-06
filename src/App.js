@@ -33,7 +33,7 @@ const App = () => {
           <CharacterContainer sx={{ m: "auto", width: "auto" }} />
         </div>
         <div>
-          <h5 style={{ color: "white" }}>
+          <h5 style={{ color: "white", margin: 0, padding: "4%" }}>
             DGM3790 {bull} © Maggie McCausland {bull} 2021
           </h5>
         </div>

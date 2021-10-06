@@ -11,8 +11,9 @@ import InfoIcon from "@mui/icons-material/Info";
 const CharacterCard = (props) => {
   let imageStyle = {
     height: "auto",
-    width: "93%",
-    maxWidth: "150px",
+    width: "auto",
+    maxHeight: "190px",
+    // minWidth: "90px",
     overflow: "hidden",
     borderWidth: 5,
     border: "3px solid white",
@@ -49,10 +50,10 @@ const CharacterCard = (props) => {
         display: "flex",
         flexDirection: "column",
         m: 2,
-        bgcolor: "darkBlue",
+        bgcolor: "darkgray",
         "&:hover": {
           borderRadius: 4,
-          bgcolor: "darkRed",
+          bgcolor: "darkorange",
         },
       }}
     >
