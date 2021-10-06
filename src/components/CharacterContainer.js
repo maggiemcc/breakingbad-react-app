@@ -141,44 +141,15 @@ const CharacterContainer = () => {
               <Typography variant="h6" style={{textAlign: 'center', fontWeight: 'normal', borderBottom: "1px solid gray"}}>More About: <b>{character.name}</b> </Typography>
 
                   <div style={{textAlign: 'left'}}>
-                    <p style={characterInfoStyle}>{bull} Born: {character.birthday}</p>
-                    {/* <div style={{display: "inline", paddingRight: "2%"}}>{bull}</div> */}
-                    <p style={characterInfoStyle}>{bull} Nickname: {character.nickname}</p>
-                    {/* <div style={{display: "inline", paddingRight: "2%"}}>{bull}</div> */}
-                    <p style={characterInfoStyle}>{bull} Portrayed By: {character.portrayed}</p>
-                    <p style={characterInfoStyle}>{bull} Occupation: {character.occupation}</p>
-                    <p style={characterInfoStyle}>{bull} Status: {character.status}</p>
-                    {/* <hr></hr> */}
-                    {/* <div> */}
-                    {/* <h6 style={{margin: "2%",}}>Opening Crawl</h6> */}
-                    {/* <p style={characterInfoStyle}>{character.opening_crawl}</p> */}
-                    {/* </div> */}
+                    <p style={characterInfoStyle}>{bull} <b>Born:</b> {character.birthday}</p>
+                    <p style={characterInfoStyle}>{bull} <b>Nickname:</b> {character.nickname}</p>
+                    <p style={characterInfoStyle}>{bull} <b>Portrayed By:</b> {character.portrayed}</p>
+                    <p style={characterInfoStyle}>{bull} <b>Occupation:</b> {character.occupation}</p>
+                    <p style={characterInfoStyle}>{bull} <b>Status:</b> {character.status}</p>
                   </div>
                 </div>
               );
             })}
-            {/* <a
-              href="https://www.starwars.com/films"
-              rel="noreferrer"
-              target="_blank"
-              style={{ textDecoration: "none", width: "100%" }}
-            >
-              <Typography
-                sx={{
-                  fontWeight: "bold",
-                  margin: "2%",
-                  padding: "2%",
-                  background: "darkRed",
-                  color: "white",
-                  borderRadius: "20px",
-                  "&:hover": {
-                    bgcolor: "darkBlue",
-                  },
-                }}
-              >
-                Learn More About Star Wars
-              </Typography>
-            </a> */}
           </Box>
         </Modal>
       </div>
