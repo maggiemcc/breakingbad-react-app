@@ -22,7 +22,8 @@ const modalStyle = {
 
 const characterInfoContainerStyle = {
   textAlign: "left",
-  // borderBottom: "1px solid gray",
+  border: "1px solid gray",
+  borderRadius: "12px",
   padding: "2%",
   width: "auto",
 };
@@ -139,12 +140,14 @@ const CharacterContainer = () => {
                 <div style={characterInfoContainerStyle} key={character.char_id}>
               <Typography variant="h6" style={{textAlign: 'center', fontWeight: 'normal', borderBottom: "1px solid gray"}}>More About: <b>{character.name}</b> </Typography>
 
-                  <div style={{textAlign: 'center'}}>
-                    <p style={characterInfoStyle}>Born: {character.birthday}</p>
+                  <div style={{textAlign: 'left'}}>
+                    <p style={characterInfoStyle}>{bull} Born: {character.birthday}</p>
                     {/* <div style={{display: "inline", paddingRight: "2%"}}>{bull}</div> */}
-                    <p style={characterInfoStyle}>Nickname: {character.nickname}</p>
+                    <p style={characterInfoStyle}>{bull} Nickname: {character.nickname}</p>
                     {/* <div style={{display: "inline", paddingRight: "2%"}}>{bull}</div> */}
-                    <p style={characterInfoStyle}>Portrayed By: {character.portrayed}</p>
+                    <p style={characterInfoStyle}>{bull} Portrayed By: {character.portrayed}</p>
+                    <p style={characterInfoStyle}>{bull} Occupation: {character.occupation}</p>
+                    <p style={characterInfoStyle}>{bull} Status: {character.status}</p>
                     {/* <hr></hr> */}
                     {/* <div> */}
                     {/* <h6 style={{margin: "2%",}}>Opening Crawl</h6> */}

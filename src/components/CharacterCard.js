@@ -62,10 +62,21 @@ const CharacterCard = (props) => {
           sx={{ fontWeight: "bold" }}
           color="primary.contrastText"
           typography="h6"
-          gutterBottom
+          // gutterBottom
         >
           {props.character.name} <br></br>
         </Typography>
+        <Typography
+                sx={{
+                  fontWeight: "500",
+                  fontSize: "16px",
+                }}
+                color="primary.contrastText"
+                typography="h6"
+                gutterBottom
+              >
+                ID: {props.character.char_id}
+              </Typography>
         <div>
         {/* <div> */}
           <div style={{ margin: "auto" }}>
@@ -82,18 +93,6 @@ const CharacterCard = (props) => {
                 textAlign: "center",
               }}
             >
-              <Typography
-                sx={{
-                  fontWeight: "500",
-                  fontSize: "16px",
-                  lineHeight: "2.5",
-                  paddingRight: "0.3%",
-                }}
-                color="primary.contrastText"
-                typography="h6"
-              >
-                ID: {props.character.char_id}
-              </Typography>
               <CardActions>
                 <IconButton
                   sx={{ p: 0, m: 0, color: favorite ? "#F00" : "#fff" }}
