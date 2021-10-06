@@ -91,7 +91,7 @@ const CharacterCard = (props) => {
                 color="primary.contrastText"
                 typography="h6"
               >
-                EP: {props.character.char_id}
+                ID: {props.character.char_id}
               </Typography>
               <CardActions>
                 <IconButton
