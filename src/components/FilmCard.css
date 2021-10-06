@@ -1,0 +1,57 @@
+body {
+  margin: auto;
+}
+
+.cardTheme {
+    border: 2px solid black;
+    border-radius: 2%;
+    max-width: 450px;
+    margin: 20px auto;
+    padding: 3%;
+}
+
+
+.cardTheme h1 {
+  color: red;
+  font-size: 2rem;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.cardTheme h3 {font-size: 1rem;}
+
+.cardTheme h3, .cardTheme p {margin: 8px;}
+
+.cardTheme p {
+  text-align: left;
+  margin-top: 20px;
+}
+
+
+.posterDiv {
+  max-width: 350px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.poster {
+  max-width: 400px;
+  width: 70%;
+  margin: auto;
+  border: 2px solid red;
+  border-radius: 2%;
+}
+
+.info {
+    text-align: left;
+    border: 2px solid black;
+    width: 90%;
+    border-radius: 5px;
+    margin: 2% auto;
+    background-color: rgb(245, 245, 245);
+}
+
+.info span {
+    font-weight: lighter;
+}
