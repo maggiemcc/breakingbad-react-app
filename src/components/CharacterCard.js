@@ -7,9 +7,9 @@ import IconButton from "@mui/material/IconButton";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import InfoIcon from "@mui/icons-material/Info";
 
-
 const CharacterCard = (props) => {
-  const statusColor = props.character.status === 'Alive' ? 'darkgreen' : 'darkred'
+  const statusColor =
+    props.character.status === "Alive" ? "darkgreen" : "darkred";
 
   let imageStyle = {
     height: "auto",
@@ -33,10 +33,8 @@ const CharacterCard = (props) => {
   };
 
   const handleInfoClick = () => {
-    console.log("thanks for clicking!");
     props.modalFunction(props.character);
   };
-
 
   // const characterImage = {
   //   textAlign: "left",
@@ -44,7 +42,6 @@ const CharacterCard = (props) => {
   //   padding: "2%",
   //   width: "auto",
   // };
-
 
   return (
     <Card
@@ -56,19 +53,19 @@ const CharacterCard = (props) => {
         bgcolor: "darkgray",
         "&:hover": {
           borderRadius: 4,
-          bgcolor: "darkorange",
-          
+          bgcolor: statusColor,
         },
       }}
     >
       <CardContent
-      sx={{
-        border: 4, borderColor: statusColor, padding: 0, margin: 0, height: "100%", "&:hover": {
-          borderRadius: 4,}
-      }}
+        sx={{
+          padding: 0,
+          margin: 0,
+          height: "100%",
+        }}
       >
         <Typography
-          sx={{ fontWeight: "bold"}}
+          sx={{ fontWeight: "bold" }}
           color="primary.contrastText"
           typography="h6"
           // gutterBottom
@@ -76,18 +73,18 @@ const CharacterCard = (props) => {
           {props.character.name} <br></br>
         </Typography>
         <Typography
-                sx={{
-                  fontWeight: "500",
-                  fontSize: "16px",
-                }}
-                color="primary.contrastText"
-                typography="h6"
-                gutterBottom
-              >
-                ID: {props.character.char_id}
-              </Typography>
+          sx={{
+            fontWeight: "500",
+            fontSize: "16px",
+          }}
+          color="primary.contrastText"
+          typography="h6"
+          gutterBottom
+        >
+          ID: {props.character.char_id}
+        </Typography>
         <div>
-        {/* <div> */}
+          {/* <div> */}
           <div style={{ margin: "auto" }}>
             <img style={imageStyle} src={props.character.img} alt="poster" />
 
@@ -116,7 +113,6 @@ const CharacterCard = (props) => {
                   <InfoIcon />
                 </IconButton>
               </CardActions>
-              
             </div>
           </div>
         </div>

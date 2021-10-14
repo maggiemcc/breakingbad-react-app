@@ -40,18 +40,14 @@ const characterInfoStyle = {
 };
 
 const favoriteStyle = {
-  // margin: "2% auto",
   marginBottom: "2%",
-  padding: "2% 0px 2% 0px",
+  padding: "2% 0px 4% 0px",
   color: "white",
-  // border: "2px solid white",
   borderRight: "none",
   borderLeft: "none",
   borderBottom: "3px solid white",
-  // borderRadius: "50px / 100px",
   width: "100%",
-  // maxWidth: "500px",
-  minHeight: "80px",
+  minHeight: "100px",
 };
 
 const bull = (
@@ -102,6 +98,7 @@ const CharacterContainer = () => {
           backgroundColor: "white",
           display: "flex",
           justifyContent: "center",
+
         }}
       >
         <h4>Character Status:</h4>
@@ -118,22 +115,19 @@ const CharacterContainer = () => {
             return (
               <div
                 key={characterId}
-                style={
-                  {
-                    padding: "0 5%",
-                  }
-                }
+                style={{
+                  padding: "0 5%",
+                }}
               >
-                <p
-                  style={{
-                    margin: "1% 0",
-                    fontFamily: "courier",
-                    fontWeight: "bold",
-                  }}
-                >
-                  {bull}
-                  {characterId}
-                </p>
+                  <p
+                    style={{
+                      margin: "1% 0",
+                      fontFamily: "courier",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {bull}{characterId}
+                  </p>
               </div>
             );
           })}
