@@ -9,6 +9,8 @@ import InfoIcon from "@mui/icons-material/Info";
 
 
 const CharacterCard = (props) => {
+  const statusColor = props.character.status === 'Alive' ? 'darkgreen' : 'darkred'
+
   let imageStyle = {
     height: "auto",
     // width: "auto",
@@ -55,12 +57,18 @@ const CharacterCard = (props) => {
         "&:hover": {
           borderRadius: 4,
           bgcolor: "darkorange",
+          
         },
       }}
     >
-      <CardContent>
+      <CardContent
+      sx={{
+        border: 4, borderColor: statusColor, padding: 0, margin: 0, height: "100%", "&:hover": {
+          borderRadius: 4,}
+      }}
+      >
         <Typography
-          sx={{ fontWeight: "bold" }}
+          sx={{ fontWeight: "bold"}}
           color="primary.contrastText"
           typography="h6"
           // gutterBottom

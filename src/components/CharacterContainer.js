@@ -40,14 +40,18 @@ const characterInfoStyle = {
 };
 
 const favoriteStyle = {
-  margin: "2% auto",
-  padding: "2% 0px 4% 0",
+  // margin: "2% auto",
+  marginBottom: "2%",
+  padding: "2% 0px 2% 0px",
   color: "white",
-  border: "2px solid white",
-  borderRadius: "50px / 100px",
-  width: "90%",
-  maxWidth: "500px",
-  minHeight: "130px",
+  // border: "2px solid white",
+  borderRight: "none",
+  borderLeft: "none",
+  borderBottom: "3px solid white",
+  // borderRadius: "50px / 100px",
+  width: "100%",
+  // maxWidth: "500px",
+  minHeight: "80px",
 };
 
 const bull = (
@@ -62,6 +66,7 @@ const bull = (
     •
   </Box>
 );
+
 
 
 const CharacterContainer = () => {
@@ -90,15 +95,35 @@ const CharacterContainer = () => {
 
   return (
     <Box id="containerLayout">
+      <div
+        style={{
+          marginTop: "2%",
+          color: "black",
+          backgroundColor: "white",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <h4>Character Status:</h4>
+        <h4 style={{ color: "darkGreen", padding: "0 2%" }}>{bull} Alive</h4>
+        <h4 style={{ color: "darkRed" }}>{bull} Dead/Presumed Dead</h4>
+      </div>
+
       <div style={favoriteStyle}>
-        <h3 style={{ margin: "2% 0", textDecoration: "underline" }}>
+        <h3 style={{ margin: "0 0 2% 0", textDecoration: "underline" }}>
           Favorite Characters
         </h3>
-
         <div>
           {favorites.map((characterId) => {
             return (
-              <div key={characterId} style={{ padding: "0 5%" }}>
+              <div
+                key={characterId}
+                style={
+                  {
+                    padding: "0 5%",
+                  }
+                }
+              >
                 <p
                   style={{
                     margin: "1% 0",
@@ -106,7 +131,8 @@ const CharacterContainer = () => {
                     fontWeight: "bold",
                   }}
                 >
-                  {bull} {characterId}
+                  {bull}
+                  {characterId}
                 </p>
               </div>
             );
@@ -131,20 +157,41 @@ const CharacterContainer = () => {
       </div>
 
       <div>
-  
         <Modal open={open} onClose={handleClose}>
           <Box sx={modalStyle}>
             {modalInfo.map((character) => {
               return (
-                <div style={characterInfoContainerStyle} key={character.char_id}>
-              <Typography variant="h6" style={{textAlign: 'center', fontWeight: 'bold', borderBottom: "1px solid gray"}}>{character.name} </Typography>
+                <div
+                  style={characterInfoContainerStyle}
+                  key={character.char_id}
+                >
+                  <Typography
+                    variant="h6"
+                    style={{
+                      textAlign: "center",
+                      fontWeight: "bold",
+                      borderBottom: "1px solid gray",
+                    }}
+                  >
+                    {character.name}{" "}
+                  </Typography>
 
-                  <div style={{textAlign: 'left'}}>
-                    <p style={characterInfoStyle}>{bull} <b>Born:</b> {character.birthday}</p>
-                    <p style={characterInfoStyle}>{bull} <b>Nickname:</b> {character.nickname}</p>
-                    <p style={characterInfoStyle}>{bull} <b>Portrayed By:</b> {character.portrayed}</p>
-                    <p style={characterInfoStyle}>{bull} <b>Occupation:</b> {character.occupation}</p>
-                    <p style={characterInfoStyle}>{bull} <b>Status:</b> {character.status}</p>
+                  <div style={{ textAlign: "left" }}>
+                    <p style={characterInfoStyle}>
+                      {bull} <b>Born:</b> {character.birthday}
+                    </p>
+                    <p style={characterInfoStyle}>
+                      {bull} <b>Nickname:</b> {character.nickname}
+                    </p>
+                    <p style={characterInfoStyle}>
+                      {bull} <b>Portrayed By:</b> {character.portrayed}
+                    </p>
+                    <p style={characterInfoStyle}>
+                      {bull} <b>Occupation:</b> {character.occupation}
+                    </p>
+                    <p style={characterInfoStyle}>
+                      {bull} <b>Status:</b> {character.status}
+                    </p>
                   </div>
                 </div>
               );
