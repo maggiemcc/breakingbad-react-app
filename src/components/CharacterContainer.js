@@ -1,10 +1,12 @@
 import * as React from "react";
-import { characters } from "../data/characters";
+// import { characters } from "../data/characters";
 import CharacterCard from "./CharacterCard";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import "./FilmCard.css";
 import Typography from "@mui/material/Typography";
+import { useBreakingBadContext } from "../contexts/BreakingBadContext";
+
 
 const modalStyle = {
   position: "absolute",
@@ -31,8 +33,6 @@ const characterInfoContainerStyle = {
 const characterInfoStyle = {
   margin: 0,
   padding: "2% 0",
-  // border: "1px solid red",
-  // display: "inline",
   display: "block",
   paddingRight: "2.5%",
   width: "auto",
@@ -74,9 +74,9 @@ const CharacterContainer = () => {
       return [character];
     });
   }
-
-
   const [favorites, setFavorites] = React.useState([]);
+  const breakingBadData =  useBreakingBadContext();
+
   const addToFavorites = (character) => {
     console.log(`${character.name} was clicked`);
     if (!favorites.includes(character.name)) {
@@ -117,7 +117,7 @@ const CharacterContainer = () => {
       <div
         style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
       >
-        {characters.map((character) => {
+        {breakingBadData.characters.map((character) => {
           return (
             <CharacterCard
               key={character.char_id}

@@ -1,6 +1,7 @@
 import "./App.css";
 import CharacterContainer from "./components/CharacterContainer";
 import Box from "@mui/material/Box";
+import { BreakingBadContextProvider } from "./contexts/BreakingBadContext";
 
 const App = () => {
   const bull = (
@@ -30,7 +31,10 @@ const App = () => {
             </div>
           </div>
 
+          <BreakingBadContextProvider>
           <CharacterContainer sx={{ m: "auto", width: "auto" }} />
+          </BreakingBadContextProvider>
+          
         </div>
         <div>
           <h5 style={{ color: "white", margin: 0, padding: "4%" }}>
