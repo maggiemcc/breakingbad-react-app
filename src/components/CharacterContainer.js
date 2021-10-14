@@ -181,7 +181,7 @@ const CharacterContainer = () => {
                       {bull} <b>Portrayed By:</b> {character.portrayed}
                     </p>
                     <p style={characterInfoStyle}>
-                      {bull} <b>Occupation:</b> {character.occupation}
+                      {bull} <b>Occupation:</b> {character.occupation[0]}, {character.occupation[1]}
                     </p>
                     <p style={characterInfoStyle}>
                       {bull} <b>Status:</b> {character.status}

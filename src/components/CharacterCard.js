@@ -15,6 +15,7 @@ const CharacterCard = (props) => {
     height: "auto",
     // width: "auto",
     maxWidth: "190px",
+    maxHeight: "180px",
     // maxHeight: "190px",
     // minWidth: "90px",
     overflow: "hidden",
@@ -59,16 +60,15 @@ const CharacterCard = (props) => {
     >
       <CardContent
         sx={{
-          padding: 0,
-          margin: 0,
+          padding: "2% 1%",
+          margin: "auto",
           height: "100%",
         }}
       >
         <Typography
-          sx={{ fontWeight: "bold" }}
+          sx={{ fontWeight: "bold", marginTop: "2%" }}
           color="primary.contrastText"
           typography="h6"
-          // gutterBottom
         >
           {props.character.name} <br></br>
         </Typography>

@@ -78,3 +78,10 @@ body {
   display: grid;
   grid-template-columns: 25% 75%;
 } */
+
+
+
+
+.MuiCardContent-root.css-fwen1v-MuiCardContent-root:last-child {
+  padding-bottom: 0;
+}
