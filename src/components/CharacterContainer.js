@@ -107,8 +107,8 @@ const CharacterContainer = () => {
         }}
       >
         <h4>Character Status:</h4>
-        <h4 style={{ color: "darkGreen", padding: "0 2%" }}>{bull} Alive</h4>
-        <h4 style={{ color: "darkRed" }}>{bull} Dead/Presumed Dead</h4>
+        <h4 style={{ color: "darkGreen", padding: "0 2%" }}>Alive</h4>
+        <h4 style={{ color: "darkRed" }}>Dead/Presumed Dead</h4>
       </div>
 
       <div style={favoriteStyle}>
