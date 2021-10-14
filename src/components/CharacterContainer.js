@@ -6,6 +6,9 @@ import Modal from "@mui/material/Modal";
 import "./FilmCard.css";
 import Typography from "@mui/material/Typography";
 import { useBreakingBadContext } from "../contexts/BreakingBadContext";
+import IconButton from "@mui/material/IconButton";
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import CardActions from "@mui/material/CardActions";
 
 
 const modalStyle = {
@@ -47,7 +50,6 @@ const favoriteStyle = {
   borderLeft: "none",
   borderBottom: "3px solid white",
   width: "100%",
-  minHeight: "100px",
 };
 
 const bull = (
@@ -89,6 +91,10 @@ const CharacterContainer = () => {
     }
   };
 
+  const [showMore, setShowMore] = React.useState(false);
+  const toggleShowMoreHandler = () => {
+    setShowMore(prevShowMore => !prevShowMore);
+  }
   return (
     <Box id="containerLayout">
       <div
@@ -98,7 +104,6 @@ const CharacterContainer = () => {
           backgroundColor: "white",
           display: "flex",
           justifyContent: "center",
-
         }}
       >
         <h4>Character Status:</h4>
@@ -107,18 +112,34 @@ const CharacterContainer = () => {
       </div>
 
       <div style={favoriteStyle}>
-        <h3 style={{ margin: "0 0 2% 0", textDecoration: "underline" }}>
+        <div style={{}}>
+        <h3 style={{ margin: "0 0 2% 0", padding: 0, textDecoration: "underline", display: "flex", flexWrap: "wrap", justifyContent: "center", }}>
           Favorite Characters
+
+          <CardActions
+             style={{ padding: 0, margin: 0 }}
+
+          >
+          <IconButton
+             style={{padding: 0, margin: 0, color: "white" }}
+             onClick={toggleShowMoreHandler}
+          >
+            <ExpandMoreIcon/>
+          </IconButton>
+          </CardActions>
         </h3>
-        <div>
-          {favorites.map((characterId) => {
-            return (
-              <div
-                key={characterId}
-                style={{
-                  padding: "0 5%",
-                }}
-              >
+        </div>
+
+        {showMore && (
+          <div>
+            {favorites.map((characterId) => {
+              return (
+                <div
+                  key={characterId}
+                  style={{
+                    padding: "0 5%",
+                  }}
+                >
                   <p
                     style={{
                       margin: "1% 0",
@@ -126,12 +147,14 @@ const CharacterContainer = () => {
                       fontWeight: "bold",
                     }}
                   >
-                    {bull}{characterId}
+                    {bull}
+                    {characterId}
                   </p>
-              </div>
-            );
-          })}
-        </div>
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
 
       <div
@@ -181,7 +204,8 @@ const CharacterContainer = () => {
                       {bull} <b>Portrayed By:</b> {character.portrayed}
                     </p>
                     <p style={characterInfoStyle}>
-                      {bull} <b>Occupation:</b> {character.occupation[0]}, {character.occupation[1]}
+                      {bull} <b>Occupation:</b> {character.occupation[0]},{" "}
+                      {character.occupation[1]}
                     </p>
                     <p style={characterInfoStyle}>
                       {bull} <b>Status:</b> {character.status}
