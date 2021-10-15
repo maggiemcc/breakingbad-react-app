@@ -38,18 +38,6 @@ const CharacterCard = (props) => {
     props.modalFunction(props.character);
   };
 
-  // const characterImage = {
-  //   textAlign: "left",
-  //   borderBottom: "1px solid gray",
-  //   padding: "2%",
-  //   width: "auto",
-  // };
-
-  const [showInfo, setShowInfo] = React.useState(false);
-  const toggleShowInfoHandler = () => {
-    setShowInfo((prevshowInfo) => !prevshowInfo);
-  };
-
   return (
     <Card
       sx={{
@@ -57,7 +45,8 @@ const CharacterCard = (props) => {
         display: "flex",
         flexDirection: "column",
         m: 2,
-        bgcolor: "darkgray",
+        bgcolor: "black",
+        border: "2px solid white",
         "&:hover": {
           borderRadius: 4,
           bgcolor: statusColor,
@@ -78,76 +67,46 @@ const CharacterCard = (props) => {
         >
           {props.character.name} <br></br>
         </Typography>
-        <CardActions
-          style={{
-            margin: "auto",
-            textAlign: "center",
-            justifyContent: "space-evenly",
-          }}
-        >
-          <IconButton
-            sx={{ p: 0, m: 0, color: favorite ? "#F00" : "#fff" }}
-            onClick={handleFavoriteClick}
-          >
-            <FavoriteIcon />
-          </IconButton>
-          <IconButton
-            style={{ padding: 0, margin: 0, color: "white" }}
-            onClick={toggleShowInfoHandler}
-          >
-            <ExpandMoreIcon />
-          </IconButton>
-        </CardActions>
-
-        {showInfo && (
+        <div>
           <div>
-            <div>
-              <div style={{ margin: "auto" }}>
-                <img
-                  style={imageStyle}
-                  src={props.character.img}
-                  alt="poster"
-                />
+            <div style={{ margin: "auto" }}>
+              <img style={imageStyle} src={props.character.img} alt="poster" />
 
-                <div
+              <div
+                style={{
+                  display: "flex",
+                  margin: "0 auto",
+                  padding: 0,
+                  height: 40,
+                  lineHeight: 40,
+                  justifyContent: "center",
+                  textAlign: "center",
+                }}
+              >
+                <CardActions
                   style={{
-                    display: "flex",
-                    margin: "0 auto",
-                    padding: 0,
-                    height: 40,
-                    lineHeight: 40,
-                    justifyContent: "center",
+                    margin: "auto",
                     textAlign: "center",
+                    justifyContent: "space-evenly",
                   }}
                 >
-                  <div style={{display: "flex", flexWrap: "wrap"}}>
-                  <Typography
-                    sx={{
-                      fontWeight: "500",
-                      fontSize: "16px",
-                      margin: "auto",
-                    }}
-                    color="primary.contrastText"
-                    typography="h6"
-                    // gutterBottom
+                  <IconButton
+                    sx={{ p: 0, m: 0, color: favorite ? "#F00" : "#fff" }}
+                    onClick={handleFavoriteClick}
                   >
-                    ID: {props.character.char_id}
-                  </Typography>
-
-                  <CardActions>
-                    <IconButton
-                      sx={{ p: 0, m: 0, color: "white" }}
-                      onClick={handleInfoClick}
-                    >
-                      <InfoIcon />
-                    </IconButton>
-                  </CardActions>
-                  </div>
-                </div>
+                    <FavoriteIcon />
+                  </IconButton>
+                  <IconButton
+                    sx={{ p: 0, m: 0, color: "white" }}
+                    onClick={handleInfoClick}
+                  >
+                    <InfoIcon />
+                  </IconButton>
+                </CardActions>
               </div>
             </div>
           </div>
-        )}
+        </div>
       </CardContent>
     </Card>
   );
